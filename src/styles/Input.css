@@ -1,0 +1,21 @@
+#inputContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 35px;
+}
+
+#start {
+  padding-right: 5px;
+}
+
+#input {
+  background-color: transparent;
+  border: none;
+  caret-color: #fff;
+}
+
+*:focus {
+  outline: none;
+}
