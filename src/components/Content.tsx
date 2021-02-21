@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Content() {
+const Content: React.FC = () => {
   return <></>;
 }
 
