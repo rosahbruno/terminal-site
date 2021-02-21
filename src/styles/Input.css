@@ -10,10 +10,11 @@
   padding-right: 5px;
 }
 
-#input {
+.input {
   background-color: transparent;
   border: none;
   caret-color: #fff;
+  color: #fff;
 }
 
 *:focus {

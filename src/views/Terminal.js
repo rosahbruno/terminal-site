@@ -10,22 +10,28 @@ function Terminal() {
   // *** state *** //
   const [lines, setLines] = useState(['']);
 
-  // *** lifecycle *** //
-
   // *** methods *** //
-  const incrementLines = () => setLines([
-    ...lines,
-    ''
-  ]);
+  const incrementLines = () => setLines([...lines, '']);
+
+  const updateLineHistory = (value) => {
+    let arrCopy = lines;
+    arrCopy[arrCopy.length - 1] = value;
+    setLines([...arrCopy]);
+    incrementLines();
+  };
 
   // *** ui *** //
-  const renderLines = () => lines.map((line) => <Input input={line} />);
+  const renderLines = () =>
+    lines.map((line, idx) => (
+      <Input
+        key={`${line}${idx}`}
+        disabled={idx !== lines.length - 1}
+        initialInput={line}
+        onSubmit={updateLineHistory}
+      />
+    ));
 
-  return (
-    <div id='container'>
-      {renderLines()}
-    </div>
-  );
+  return <div id='container'>{renderLines()}</div>;
 }
 
 export default Terminal;
