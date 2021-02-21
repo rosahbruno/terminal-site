@@ -5,3 +5,7 @@
   min-height: 100vh;
   padding: 10px;
 }
+
+* {
+  font-family: 'Roboto Mono', monospace;
+}
