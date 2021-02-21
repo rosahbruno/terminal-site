@@ -20,3 +20,11 @@
 *:focus {
   outline: none;
 }
+
+.found {
+  color: green;
+}
+
+.not-found {
+  color: red;
+}
