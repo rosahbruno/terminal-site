@@ -10,7 +10,7 @@ class Interpreter {
   }
 
   getContent(type: string): string {
-    return content?.[type as keyof typeof content] || '';
+    return content?.[type as keyof typeof content] ?? '';
   }
 
   getLink(type: string): void {

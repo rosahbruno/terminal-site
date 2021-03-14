@@ -14,7 +14,7 @@ interface InputProps {
 }
 
 const Input: React.FC<InputProps> = ({ disabled, initialInput, onSubmit }) => {
-  const [input, setInput] = React.useState(initialInput || '');
+  const [input, setInput] = React.useState<string>(initialInput ?? '');
   const updateInput = (userInput: any) => setInput(userInput.target.value);
 
   // *** methods *** //
