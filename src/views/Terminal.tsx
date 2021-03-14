@@ -20,7 +20,7 @@ const Terminal: FC = () => {
 
   const updateLineHistory = (value: string, shouldShowContent: boolean) => {
     let arrCopy = lines;
-    // only allow for editing last line, like a command line
+    // only allow for editing current line, like a command line
     arrCopy[arrCopy.length - 1].value = value;
 
     if (shouldShowContent) {
