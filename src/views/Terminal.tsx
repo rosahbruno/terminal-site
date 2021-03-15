@@ -17,24 +17,29 @@ const Terminal: FC = () => {
 
   // *** methods *** //
   const updateLines = (newLines: Line[]) => setLines([...newLines, { value: '' }]);
+  const clearLines = () => setLines([{ value: '' }]);
 
   const updateLineHistory = (value: string, shouldShowContent: boolean) => {
-    let arrCopy = lines;
-    // only allow for editing current line, like a command line
-    arrCopy[arrCopy.length - 1].value = value;
-
-    if (shouldShowContent) {
-      const copy = Interpreter.getContent(value);
-      if (copy) {
-        arrCopy[arrCopy.length - 1].content = {
-          copy
-        };
-      } else {
-        Interpreter.getLink(value);
+    if (value === 'clear') {
+      clearLines();
+    } else {
+      let arrCopy = lines;
+      // only allow for editing current line, like a command line
+      arrCopy[arrCopy.length - 1].value = value;
+  
+      if (shouldShowContent) {
+        const copy = Interpreter.getContent(value);
+        if (copy) {
+          arrCopy[arrCopy.length - 1].content = {
+            copy
+          };
+        } else {
+          Interpreter.getLink(value);
+        }
       }
+  
+      updateLines([...arrCopy]);
     }
-
-    updateLines([...arrCopy]);
   };
 
   // *** ui *** //

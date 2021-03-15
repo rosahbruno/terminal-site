@@ -7,7 +7,9 @@ const commands: string[] = [
   'experience',
   'skills',
   'education',
-  'contact'
+  'contact',
+  'help',
+  'clear'
 ];
 
 export default commands;

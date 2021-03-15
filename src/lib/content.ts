@@ -8,7 +8,8 @@ const content = {
   firstName: 'bruno',
   lastName: 'rosa',
   email: 'rosahbruno@gmail.com',
-  phone: '(412) 773-1347'
+  phone: '(412) 773-1347',
+  help: 'help'
 };
 
 export default content;
