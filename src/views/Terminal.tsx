@@ -26,7 +26,7 @@ const Terminal: FC = () => {
       let arrCopy = lines;
       // only allow for editing current line, like a command line
       arrCopy[arrCopy.length - 1].value = value;
-  
+
       if (shouldShowContent) {
         const copy = Interpreter.getContent(value);
         if (copy) {
@@ -36,8 +36,12 @@ const Terminal: FC = () => {
         } else {
           Interpreter.getLink(value);
         }
+      } else {
+        arrCopy[arrCopy.length - 1].content = {
+          copy: Interpreter.getError()
+        };
       }
-  
+
       updateLines([...arrCopy]);
     }
   };

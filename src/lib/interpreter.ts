@@ -13,6 +13,10 @@ class Interpreter {
     return content?.[type as keyof typeof content] ?? '';
   }
 
+  getError(): string {
+    return content.commandNotFoundError;
+  }
+
   getLink(type: string): void {
     let link: Link | null = null;
 
