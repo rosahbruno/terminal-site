@@ -10,10 +10,11 @@ import '../styles/Terminal.css';
 import { Line } from '../lib/types/common';
 
 // *** utils *** //
-import Interpreter from '../lib/interpreter';
+import { Interpreter } from '../lib/Interpreter';
 
 const Terminal: FC = () => {
   const [lines, setLines] = useState<Line[]>([{ value: '' }]);
+  const interpreter = Interpreter.getInstance();
 
   // *** methods *** //
   const updateLines = (newLines: Line[]) => setLines([...newLines, { value: '' }]);
@@ -28,17 +29,17 @@ const Terminal: FC = () => {
       arrCopy[arrCopy.length - 1].value = value;
 
       if (shouldShowContent) {
-        const copy = Interpreter.getContent(value);
+        const copy = interpreter.getContent(value);
         if (copy) {
           arrCopy[arrCopy.length - 1].content = {
             copy
           };
         } else {
-          Interpreter.getLink(value);
+          interpreter.getLink(value);
         }
       } else {
         arrCopy[arrCopy.length - 1].content = {
-          copy: Interpreter.getError()
+          copy: interpreter.getError()
         };
       }
 

@@ -4,7 +4,7 @@ import { FC, useEffect, useRef, useState } from 'react';
 import '../styles/Input.css';
 
 // *** utils *** //
-import Interpreter from '../lib/interpreter';
+import { Interpreter } from '../lib/Interpreter';
 import strings from '../lib/strings';
 
 interface InputProps {
@@ -14,6 +14,7 @@ interface InputProps {
 }
 
 const Input: FC<InputProps> = ({ disabled, initialInput, onSubmit }) => {
+  const interpreter = Interpreter.getInstance();
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [input, setInput] = useState<string>(initialInput ?? '');
@@ -44,7 +45,7 @@ const Input: FC<InputProps> = ({ disabled, initialInput, onSubmit }) => {
   // *** ui *** //
   const renderStart = () => <p id='start'>{strings.inputStart}</p>;
   const renderInput = () => {
-    const shouldShowContent = Interpreter.isValidCommand(input);
+    const shouldShowContent = interpreter.isValidCommand(input);
     const classes = `input ${shouldShowContent ? 'found' : 'not-found'}`;
     return (
       <input

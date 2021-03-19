@@ -4,7 +4,18 @@ import links from './links';
 
 import { Link } from './types/common';
 
-class Interpreter {
+export class Interpreter {
+  private static instance: Interpreter;
+  private constructor() { }
+
+  public static getInstance(): Interpreter {
+    if (!Interpreter.instance) {
+      Interpreter.instance = new Interpreter();
+    }
+
+    return Interpreter.instance;
+  }
+
   isValidCommand(input: string) {
     return commands.some((cmd) => cmd === input);
   }
@@ -52,19 +63,13 @@ class Interpreter {
     this._goToLink(link);
   }
 
-  // TODO - figure out how to kickoff a resume download
+  // @todo - figure out how to kickoff a resume download
   resume() {}
 
-  // TODO - implement autocomplete (https://medium.com/weekly-webtips/js-implementing-auto-complete-f4c5a5d5c009)
+  // @todo - implement autocomplete (https://medium.com/weekly-webtips/js-implementing-auto-complete-f4c5a5d5c009)
   autocomplete() {}
 
   _goToLink(link: Link) {
     console.log(link);
   }
 }
-
-// creates Singleton instance
-const instance = new Interpreter();
-Object.freeze(instance);
-
-export default instance;
