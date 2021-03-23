@@ -16,7 +16,7 @@ export class Interpreter {
     return Interpreter.instance;
   }
 
-  isValidCommand(input: string) {
+  isValidCommand(input: string): boolean {
     return commands.some((cmd) => cmd === input);
   }
 
