@@ -9,7 +9,8 @@ const commands: string[] = [
     'education',
     'contact',
     'help',
-    'clear'
+    'clear',
+    'theme'
 ];
 
 export default commands;

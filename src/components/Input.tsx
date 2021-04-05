@@ -45,8 +45,8 @@ const Input: FC<InputProps> = ({ disabled, initialInput, onSubmit }) => {
     // *** ui *** //
     const renderStart = () => <p id='start'>{strings.inputStart}</p>;
     const renderInput = () => {
-        const shouldShowContent = interpreter.isValidCommand(input);
-        const classes = `input ${shouldShowContent ? 'found' : 'not-found'}`;
+        const isValidCommand = interpreter.isValidCommand(input);
+        const classes = `input ${isValidCommand ? 'found' : 'not-found'}`;
         return (
             <input
                 ref={inputRef}
@@ -55,7 +55,7 @@ const Input: FC<InputProps> = ({ disabled, initialInput, onSubmit }) => {
                 value={input}
                 className={classes}
                 onChange={updateInput}
-                onKeyDown={(ev) => handleKeyDown(ev, shouldShowContent)}
+                onKeyDown={(ev) => handleKeyDown(ev, isValidCommand)}
                 disabled={disabled}
                 autoFocus={true}
             />
