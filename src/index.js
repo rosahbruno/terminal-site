@@ -5,10 +5,10 @@ import Terminal from './views/Terminal';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Terminal />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Terminal />
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

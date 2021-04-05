@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Content: React.FC = () => {
-  return <></>;
-}
+    return <></>;
+};
 
 export default Content;

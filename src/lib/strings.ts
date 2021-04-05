@@ -1,5 +1,5 @@
 const strings = {
-  inputStart: '>'
+    inputStart: '>'
 };
 
 export default strings;

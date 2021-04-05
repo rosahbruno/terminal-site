@@ -1,14 +1,14 @@
 export interface Line {
-  value: string;
-  content?: Content;
+    value: string;
+    content?: Content;
 }
 
 export interface Content {
-  copy?: string;
-  link?: Link;
+    copy?: string;
+    link?: Link;
 }
 
 export interface Link {
-  title: string;
-  url: string;
+    title: string;
+    url: string;
 }
