@@ -35,7 +35,7 @@ const Terminal: FC = () => {
                         copy
                     };
                 } else {
-                    interpreter.getLink(value);
+                    interpreter.goToLink(value);
                 }
             } else {
                 arrCopy[arrCopy.length - 1].content = {

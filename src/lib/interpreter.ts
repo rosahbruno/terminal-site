@@ -28,7 +28,7 @@ export class Interpreter {
         return content.commandNotFoundError;
     }
 
-    getLink(type: string): void {
+    goToLink(type: string): void {
         let link: Link | null = null;
 
         switch (type) {
@@ -60,7 +60,7 @@ export class Interpreter {
                 return;
         }
 
-        this._goToLink(link);
+        window.open(link.url, '_blank');
     }
 
     // @todo - figure out how to kickoff a resume download
@@ -68,8 +68,4 @@ export class Interpreter {
 
     // @todo - implement autocomplete (https://medium.com/weekly-webtips/js-implementing-auto-complete-f4c5a5d5c009)
     autocomplete() {}
-
-    _goToLink(link: Link) {
-        window.open(link.url, '_blank');
-    }
 }

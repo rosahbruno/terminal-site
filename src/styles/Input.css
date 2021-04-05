@@ -7,7 +7,7 @@
 }
 
 #start {
-    padding-right: 5px;
+    padding-right: 10px;
 }
 
 .input {
@@ -15,6 +15,7 @@
     border: none;
     caret-color: #fff;
     color: #fff;
+    font-size: medium;
 }
 
 *:focus {
