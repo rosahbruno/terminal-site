@@ -70,6 +70,6 @@ export class Interpreter {
     autocomplete() {}
 
     _goToLink(link: Link) {
-        console.log(link);
+        window.open(link.url, '_blank');
     }
 }
