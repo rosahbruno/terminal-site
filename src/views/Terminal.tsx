@@ -41,13 +41,9 @@ const Terminal: FC = () => {
                     toggleTheme();
                 } else {
                     const copy = interpreter.getContent(value);
-                    if (copy) {
-                        arrCopy[arrCopy.length - 1].content = {
-                            copy
-                        };
-                    } else {
-                        interpreter.goToLink(value);
-                    }
+                    !!copy
+                        ? (arrCopy[arrCopy.length - 1].content = { copy })
+                        : interpreter.goToLink(value);
                 }
             } else {
                 arrCopy[arrCopy.length - 1].content = {
