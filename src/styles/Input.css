@@ -16,6 +16,7 @@
     caret-color: #fff;
     color: #fff;
     font-size: medium;
+    caret-color: red;
 }
 
 *:focus {
