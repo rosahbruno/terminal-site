@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 
 // *** context *** //
 import { ThemeContext, ThemeOptions, themes } from '../context/themeContext';
